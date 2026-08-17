@@ -1,16 +1,16 @@
 # Redis-Compatible In-Memory Database Server (Go)
 
-A Redis-compatible in-memory key-value database server built from scratch in Go — no external libraries, just the Go standard library.
+A Redis-compatible in-memory key-value database server built from scratch in Go - no external libraries, just the Go standard library.
 
 Implements the [RESP (Redis Serialization Protocol)](https://redis.io/docs/reference/protocol-spec/), so it works with the real `redis-cli` and any Redis-compatible client.
 
 ## Features
 
-- **TCP server** with concurrent connection handling (goroutines) — supports multiple simultaneous clients
-- **RESP protocol parser and serializer** — reads and writes Simple Strings, Bulk Strings, Arrays, Errors, and Null responses
+- **TCP server** with concurrent connection handling (goroutines): supports multiple simultaneous clients
+- **RESP protocol parser and serializer**: reads and writes Simple Strings, Bulk Strings, Arrays, Errors, and Null responses
 - **Commands implemented:** `PING`, `SET`, `GET`, `HSET`, `HGET`, `DEL`
 - **Thread-safe in-memory storage** using `sync.RWMutex` to safely handle concurrent reads/writes
-- **AOF (Append-Only File) persistence** — every write command is logged to disk and replayed on startup, so data survives server restarts
+- **AOF (Append-Only File) persistence**: every write command is logged to disk and replayed on startup, so data survives server restarts
 
 ## Architecture
 
